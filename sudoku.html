@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Sudoku</title>
+    <link rel="stylesheet" href="sudoku.css">
+    <script src="sudoku.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🌿 Sudoku</h1>
+
+        <div class="stats-bar">
+            <div class="stat-item">Score: <span id="score">0</span></div>
+            <div class="stat-item">Time: <span id="timer">00:00</span></div>
+        </div>
+        <div class="controls">
+            <button id="pauseBtn" aria-label="Pause"></button>
+            <button id="eraseBtn" aria-label="Erase">✎</button>
+            <button id="notesBtn" aria-label="Notes">📝</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div id="board"></div>
+
+        <div id="digits"></div>
+
+        <p id="message"></p>
+    </div>
+</body>
+</html>

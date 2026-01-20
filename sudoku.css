@@ -1,0 +1,274 @@
+:root {
+    --forest-green: #1b5e20;
+    --sage-green: #8da080;
+    --wood-brown: #4e342e;
+    --error-red: #ff5252;
+    --tile-bg: #ffffff;
+    --tile-start-bg: #b9e3ee;
+    --pause-color:#5d9e12dc;
+    --controlbutton:#bcebf3e1;
+    --erasebutton:#fa6f37;
+}
+
+/* 🌄 Full background image */
+body {
+    background-image: url("nature.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🧊 Glass container */
+.container {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    border-radius: 16px;
+    padding: 20px;
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* 🏷 Heading */
+h1 {
+    margin: 10px 0;
+    font-weight: 600;
+    color: var(--forest-green);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ⏱ Stats bar */
+.stats-bar {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #263238;
+}
+
+#score {
+    color: #2e7d32; /* deep green */
+    font-weight: bold;
+}
+
+#timer {
+    color: #0d47a1;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.controls button {
+    padding: 10px 18px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    color: white;
+    background-color: var(--controlbutton);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+#pauseBtn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;      /* perfect circle */
+    border: none;
+
+    font-size: 1.6rem;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    color: white;
+    background-color: var(--pause-color);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+#pauseBtn:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+#resetBtn {
+    border-radius: 20px;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    background-color: #0b40eb;
+}
+
+/* 🧩 Sudoku Board */
+#board {
+    width: 90vw;
+    height: 90vw;
+    max-width: 450px;
+    max-height: 450px;
+    margin: 10px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: var(--wood-brown);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+/* 🧱 Tiles */
+.tile {
+    width: 11.11%;
+    height: 11.11%;
+    background-color: var(--tile-bg);
+    border: 1px solid #cfd8dc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* Fixed cells */
+.tile-start {
+    background-color: var(--tile-start-bg);
+    color: #37474f;
+}
+
+/* User-entered cells */
+.tile-user {
+    color: var(--forest-green);
+}
+/* ❌ Wrong cell */
+.tile-wrong {
+    background-color: #ffebee;
+    color: #c62828;
+    position: relative;
+}
+
+/* ❌ Cross mark inside the cell */
+.tile-wrong::after {
+    content: "✖";
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    font-size: 14px;
+    color: #c62828;
+    pointer-events: none;
+}
+/* Pencil notes inside cell */
+.tile-note {
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    color: #555;
+}
+
+/* Allow positioning inside tile */
+.tile {
+    position: relative;
+}
+
+/* 3×3 grid lines */
+.horizontal-line {
+    border-bottom: 3px solid var(--wood-brown);
+}
+
+.vertical-line {
+    border-right: 3px solid var(--wood-brown);
+}
+
+/* 🔢 Digits keypad */
+#digits {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.number {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid var(--forest-green);
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--forest-green);
+    transition: 0.2s;
+}
+
+.number:hover {
+    transform: scale(1.1);
+}
+
+.number-selected {
+    background-color: var(--forest-green);
+    color: white;
+}
+
+/* ❌ Message */
+#message {
+    color: var(--error-red);
+    height: 22px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+#eraseBtn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    cursor: pointer;
+    background-color: var(--erasebutton);
+    transition: transform 0.2s;
+}
+
+#eraseBtn:hover {
+    transform: scale(1.1);
+}
+
+/* 📱 Mobile */
+@media (max-width: 480px) {
+    .tile { font-size: 1.2rem; }
+    .number { width: 36px; height: 36px; }
+}
