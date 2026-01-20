@@ -12,7 +12,7 @@
 
 /* 🌄 Full background image */
 body {
-    background-image: url("nature.jpg");
+    background-image: url("../pieces/nature.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -54,6 +54,31 @@ h1 {
     font-weight: bold;
     font-size: 1.1rem;
     color: #263238;
+}
+.start-section {
+    margin: 10px 0 15px;
+}
+
+/* ▶ Start Button */
+#startBtn {
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: bold;
+
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+
+    background-color: #1b5e20;   /* same forest green */
+    color: white;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+#startBtn:hover {
+    transform: scale(1.08);
+    opacity: 0.9;
 }
 
 #score {
@@ -271,4 +296,30 @@ h1 {
 @media (max-width: 480px) {
     .tile { font-size: 1.2rem; }
     .number { width: 36px; height: 36px; }
+}
+@keyframes highlightFlash {
+    0%   { background-color: #fff9c4; }
+    50%  { background-color: #ffe082; }
+    100% { background-color: #aaf16f; }
+}
+
+.highlight {
+    animation: highlightFlash 0.8s  forwards ease-in-out;
+}
+@keyframes boardComplete {
+    0% { transform: scale(1); background-color: #ffffff; }
+    50% { transform: scale(1.02); background-color: #b9f062; }
+    100% { transform: scale(1); background-color: #7aff7a; }
+}
+
+.board-complete {
+    animation: boardComplete 1.2s  forwards ease-in-out ;
+}
+/* ✅ Digit button completed */
+.number-complete {
+    background-color: #c8e6c9;   /* light green */
+    color: #1b5e20;
+    border-color: #1b5e20;
+    cursor: default;
+    opacity: 0.8;
 }
