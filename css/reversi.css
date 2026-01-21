@@ -203,3 +203,35 @@ h1 {
         height: 20px;
     }
 }
+
+.home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+
+    padding: 6px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    background: linear-gradient(
+        to right,
+        #111827,
+        #374151
+    );
+
+    color: #f9fafb;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.4),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.home-btn:hover {
+    transform: translateX(-2px);
+    filter: brightness(1.1);
+}

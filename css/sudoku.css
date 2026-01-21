@@ -28,6 +28,7 @@ body {
 
 /* 🧊 Glass container */
 .container {
+    position: relative;
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(6px);
     border-radius: 16px;
@@ -322,4 +323,35 @@ h1 {
     border-color: #1b5e20;
     cursor: default;
     opacity: 0.8;
+}
+
+.home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    padding: 6px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    background: linear-gradient(
+        to right,
+        #6fbf73,
+        #9fe0a3
+    );
+
+    color: #1b4332;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.home-btn:hover {
+    transform: translateX(-2px);
+    filter: brightness(1.05);
 }

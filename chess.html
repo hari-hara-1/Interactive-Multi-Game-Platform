@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vanilla Chess (Unicode)</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+<header class="app-header">
+  <a href="index.html" class="home-btn">← Home</a>
+
+  <div class="title">
+    <h1>♟ Vanilla Chess</h1>
+    <p class="subtitle">Human vs Human</p>
+  </div>
+</header>
+
+
+<main class="game">
+  <div class="tray black-tray" id="black-captures"></div>
+
+  <div class="carrom-frame">
+    <div class="board-container">
+      <div id="board"></div>
+    </div>
+  </div>
+
+  <div class="tray white-tray" id="white-captures"></div>
+
+  <div class="info">
+    <p id="status">White to move</p>
+  </div>
+</main>
+
+  </div>
+
+  <div id="game-over-overlay" class="overlay hidden">
+  <div class="popup">
+    <h2 id="game-over-title"></h2>
+    <button id="restart-btn">Play Again</button>
+  </div>
+</div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
