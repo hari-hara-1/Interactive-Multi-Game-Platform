@@ -3,15 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reversi React</title>
+    <title>Reversi</title>
     <link rel="stylesheet" href="css/reversi.css">
-
 </head>
 <body>
-    <a href="index.html" class="home-btn">← Home</a>
-    <div id="root"></div>
+    <div class="app">
+        <header class="app-header">
+            <a href="index.html" class="home-btn">← Home</a>
+            <div class="title">
+                <h1>◉ Reversi</h1>
+                <p class="subtitle">Flip the game in your favor</p>
+            </div>
+        </header>
 
-        <!-- Local libraries -->
+        <main class="game">
+            <div class="carrom-frame">
+                <div class="board-container">
+                    <div id="root"></div>
+            </div>
+
+            <div class="info">
+                <div class="score-panel">
+                    <div class="score-item black-score">
+                        <span class="score-disc black"></span>
+                        <span id="black-score">2</span>
+                    </div>
+                    <div class="score-divider">:</div>
+                    <div class="score-item white-score">
+                        <span class="score-disc white"></span>
+                        <span id="white-score">2</span>
+                    </div>
+                <p id="status">Black to move</p>
+            </div>
+        </main>
+    </div>
+
+    <div id="game-over-overlay" class="overlay hidden">
+        <div class="popup">
+            <h2 id="game-over-title"></h2>
+            <button id="restart-btn">Play Again</button>
+        </div>
+
+    <!-- Local libraries -->
     <script src="js/lib/react.development.js"></script>
     <script src="js/lib/react-dom.development.js"></script>
     <script src="js/lib/babel.min.js"></script>
